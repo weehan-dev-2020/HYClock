@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#root > .navigation {
+  height: 60px;
+}
+
+#root > .body {
+  height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+}
+#root > .footer {
+  height: 60px;
+}
