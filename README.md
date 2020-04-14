@@ -7,4 +7,4 @@
 3. `압축해제된 확장 프로그램을 로드합니다.` 클릭
 4. 클론받은 UnivClock 디렉토리 선택
 
-inspired by @MaxKim-J 
+inspired by [@MaxKim-J](https://github.com/MaxKim-J) - [https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension](https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension)
