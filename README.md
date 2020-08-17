@@ -1,6 +1,5 @@
 # 대학 연합 종강시계 Extension
 
-`Not in progress yet`
 ## 미리보기
 ![](src/image/preview.png)
 
