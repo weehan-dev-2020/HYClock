@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 1rem;
+  justify-content: flex-end;
+}
+.footer > a > svg {
+  width: 30px;
+  fill: white;
+}
