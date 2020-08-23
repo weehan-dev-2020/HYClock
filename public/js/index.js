@@ -7,6 +7,7 @@ const setTime = () => {
 const windowOnload = () => {
   const wordEl = document.getElementById("word");
   setBackground();
+  setTime();
   setInterval(setTime, 1000);
   const randomWord =
     config.wordList[Math.floor(Math.random() * config.wordList.length)];
