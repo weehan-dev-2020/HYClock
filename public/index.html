@@ -20,6 +20,31 @@
         <p id="word"></p>
       </div>
       <div class="footer">
+        <div class="background-container">
+          <label
+            for="open-background-change-modal"
+            class="background-change-label no-drag"
+          >
+            배경화면 수정
+          </label>
+          <input hidden type="checkbox" id="open-background-change-modal" />
+          <div class="background-change-modal">
+            <div class="title">배경화면 수정</div>
+            <div class="sub-title">사진 업로드</div>
+            <label class="button" for="background-input">배경화면 선택</label>
+            <div class="info">사진 업로드는 5MB 이하로만 가능합니다.</div>
+            <input
+              hidden
+              type="file"
+              name=""
+              id="background-input"
+              accept="image/*"
+            />
+            <div class="sub-title">사진 초기화</div>
+            <div class="reset-background button">배경화면 초기화</div>
+            <div class="info">기본 배경화면으로 초기화합니다.</div>
+          </div>
+        </div>
         <a href="https://github.com/Neulhan/UnivClock">
           <svg
             role="img"
@@ -33,6 +58,7 @@
           </svg>
         </a>
       </div>
+      <script src="js/background.js"></script>
     </div>
   </body>
 </html>

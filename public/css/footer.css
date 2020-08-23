@@ -5,9 +5,86 @@
   left: 0;
   display: flex;
   padding: 1rem;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .footer > a > svg {
   width: 30px;
   fill: white;
+}
+.footer > .background-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.footer > .background-container > .background-change-label {
+  display: block;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.footer > .background-container > .background-change-modal {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.footer
+  > .background-container
+  > #open-background-change-modal:checked
+  + .background-change-modal {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  position: absolute;
+  color: white;
+  bottom: 48px;
+  width: 300px;
+  z-index: 1;
+}
+.footer
+  > .background-container
+  > #open-background-change-modal:checked
+  + .background-change-modal
+  > .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.footer
+  > .background-container
+  > #open-background-change-modal:checked
+  + .background-change-modal
+  > .sub-title {
+  font-size: 14px;
+  margin: 12px 0 8px;
+}
+
+.footer
+  > .background-container
+  > #open-background-change-modal:checked
+  + .background-change-modal
+  > .info {
+  margin-top: 2px;
+  color: #888;
+}
+
+.footer
+  > .background-container
+  > #open-background-change-modal:checked
+  + .background-change-modal
+  > .button {
+  background-color: #e6e6e6;
+  width: 120px;
+  color: #292931;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.footer
+  > .background-container
+  > #open-background-change-modal:checked
+  + .background-change-modal
+  > .button:hover {
+  background-color: #bbb;
 }

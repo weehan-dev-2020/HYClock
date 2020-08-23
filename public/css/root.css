@@ -3,6 +3,7 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
+  background-color: #fafafa;
 }
 
 #root > .navigation {
@@ -10,4 +11,12 @@
   display: fixed;
   top: 0;
   left: 0;
+}
+
+.no-drag {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 }
