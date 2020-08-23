@@ -1,3 +1,44 @@
+.tab-container .open-label {
+  display: block;
+  color: white;
+  font-size: 16px;
+  cursor: pointer; }
+
+.tab-container .modal {
+  display: none; }
+
+.tab-container .open-check:checked + .modal {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  position: absolute;
+  color: white;
+  bottom: 48px;
+  width: 300px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6); }
+  .tab-container .open-check:checked + .modal .title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px; }
+  .tab-container .open-check:checked + .modal .sub-title {
+    font-size: 14px;
+    margin: 12px 0 8px; }
+  .tab-container .open-check:checked + .modal .info {
+    margin-top: 2px;
+    color: #888; }
+  .tab-container .open-check:checked + .modal .button {
+    background-color: #e6e6e6;
+    width: 120px;
+    color: #292931;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; }
+    .tab-container .open-check:checked + .modal .button:hover {
+      background-color: #bbb; }
+
 .footer {
   width: 100%;
   position: fixed;
@@ -5,153 +46,35 @@
   left: 0;
   display: flex;
   padding: 1rem;
-  justify-content: space-between;
-}
-.footer > a > svg {
-  width: 30px;
-  fill: white;
-}
-.footer > .background-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.footer > .background-container > .background-change-label {
-  display: block;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-.footer > .background-container > .background-change-modal {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.6);
-}
+  justify-content: space-between; }
+  .footer .background-container {
+    position: relative;
+    display: flex;
+    align-items: center; }
+  .footer .developer-container {
+    position: relative;
+    display: flex;
+    align-items: center; }
+    .footer .developer-container #open-developer-modal:checked + .developer-modal {
+      right: 0; }
+      .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .links {
+        margin-top: 20px;
+        display: flex; }
+        .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .links a {
+          display: block;
+          width: 32px;
+          height: 32px;
+          margin-right: 8px; }
+          .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .links a img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            background-color: white; }
+      .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .names a {
+        font-weight: 700;
+        font-size: 20px;
+        color: white; }
+        .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .names a:hover {
+          color: skyblue; }
 
-.footer
-  > .background-container
-  > #open-background-change-modal:checked
-  + .background-change-modal {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  position: absolute;
-  color: white;
-  bottom: 48px;
-  width: 300px;
-  z-index: 1;
-}
-.footer
-  > .background-container
-  > #open-background-change-modal:checked
-  + .background-change-modal
-  > .title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.footer
-  > .background-container
-  > #open-background-change-modal:checked
-  + .background-change-modal
-  > .sub-title {
-  font-size: 14px;
-  margin: 12px 0 8px;
-}
-
-.footer
-  > .background-container
-  > #open-background-change-modal:checked
-  + .background-change-modal
-  > .info {
-  margin-top: 2px;
-  color: #888;
-}
-
-.footer
-  > .background-container
-  > #open-background-change-modal:checked
-  + .background-change-modal
-  > .button {
-  background-color: #e6e6e6;
-  width: 120px;
-  color: #292931;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.footer
-  > .background-container
-  > #open-background-change-modal:checked
-  + .background-change-modal
-  > .button:hover {
-  background-color: #bbb;
-}
-
-.footer > .developer-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.footer > .developer-container > .developer-label {
-  display: block;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-.footer > .developer-container > .developer-modal {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.footer
-  > .developer-container
-  > #open-developer-modal:checked
-  + .developer-modal {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  position: absolute;
-  color: white;
-  bottom: 48px;
-  right: 0;
-  width: 300px;
-  z-index: 1;
-}
-.footer > .developer-container > .developer-modal > .title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.footer > .developer-container > .developer-modal > .sub-title {
-  font-size: 14px;
-  margin: 12px 0 8px;
-}
-
-.developer-info-wrapper .links a {
-  display: block;
-  width: 32px;
-  height: 32px;
-}
-.developer-info-wrapper .names a {
-  font-weight: 700;
-  font-size: 20px;
-  color: white;
-}
-.developer-info-wrapper .names a:hover {
-  color: skyblue;
-}
-.developer-info-wrapper .links {
-  margin-top: 20px;
-  display: flex;
-}
-.developer-info-wrapper .links a {
-  margin-right: 8px;
-}
-.developer-info-wrapper .links a img {
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  background-color: white;
-}
+/*# sourceMappingURL=footer.css.map */

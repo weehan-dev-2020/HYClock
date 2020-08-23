@@ -14,67 +14,87 @@
   </head>
   <body>
     <div id="root">
-      <div class="navigation"></div>
+      <div class="navigation">
+        <div class="left-side"></div>
+        <div class="rigth-side"></div>
+      </div>
       <div class="body">
         <p id="main-time">0000년 00월 00일 00시 00분</p>
         <p id="word"></p>
       </div>
       <div class="footer">
-        <div class="background-container container">
-          <label
-            for="open-background-change-modal"
-            class="background-change-label no-drag"
-          >
-            배경화면 수정
-          </label>
-          <input hidden type="checkbox" id="open-background-change-modal" />
-          <div class="background-change-modal">
-            <div class="title">배경화면 수정</div>
-            <div class="sub-title">사진 업로드</div>
-            <label class="button" for="background-input">배경화면 선택</label>
-            <div class="info">사진 업로드는 5MB 이하로만 가능합니다.</div>
+        <div class="left-side">
+          <div class="background-container tab-container">
+            <label
+              for="open-background-change-modal"
+              class="background-change-label open-label no-drag"
+            >
+              배경화면 수정
+            </label>
             <input
               hidden
-              type="file"
-              name=""
-              id="background-input"
-              accept="image/*"
+              type="checkbox"
+              class="open-check"
+              id="open-background-change-modal"
             />
-            <div class="sub-title">사진 초기화</div>
-            <div class="reset-background button">배경화면 초기화</div>
-            <div class="info">기본 배경화면으로 초기화합니다.</div>
+            <div class="background-change-modal modal">
+              <div class="title">배경화면 수정</div>
+              <div class="sub-title">사진 업로드</div>
+              <label class="button" for="background-input">배경화면 선택</label>
+              <div class="info">사진 업로드는 5MB 이하로만 가능합니다.</div>
+              <input
+                hidden
+                type="file"
+                name=""
+                id="background-input"
+                accept="image/*"
+              />
+              <div class="sub-title">사진 초기화</div>
+              <div class="reset-background button">배경화면 초기화</div>
+              <div class="info">기본 배경화면으로 초기화합니다.</div>
+            </div>
           </div>
         </div>
-        <div class="developer-container container">
-          <label for="open-developer-modal" class="developer-label no-drag">
-            개발자 정보
-          </label>
-          <input hidden type="checkbox" id="open-developer-modal" />
-          <div class="developer-modal">
-            <div class="title">개발자 정보</div>
+        <div class="rigth-side">
+          <div class="developer-container tab-container">
+            <label
+              for="open-developer-modal"
+              class="developer-label open-label no-drag"
+            >
+              개발자 정보
+            </label>
+            <input
+              hidden
+              type="checkbox"
+              class="open-check"
+              id="open-developer-modal"
+            />
+            <div class="developer-modal modal">
+              <div class="title">개발자 정보</div>
 
-            <div class="developer-info-wrapper">
-              <div class="names">
-                <a href="https://github.com/Neulhan">#Neulhan</a>
-                <a href="https://github.com/ektmf7890">#ektmf7890</a>
-                <a href="https://github.com/JungeunK-9999">#JungeunK-9999</a>
-              </div>
-              <div class="links">
-                <a href="https://github.com/Neulhan/UnivClock">
-                  <img src="../src/image/icon/github.svg" alt="" />
-                </a>
-                <a href="https://www.weehan.com/">
-                  <img
-                    src="https://avatars2.githubusercontent.com/u/50257388?s=200&v=4"
-                    alt=""
-                  />
-                </a>
-                <a href="">
-                  <img
-                    src="https://avatars2.githubusercontent.com/u/36146832?s=200&v=4"
-                    alt=""
-                  />
-                </a>
+              <div class="developer-info-wrapper">
+                <div class="names">
+                  <a href="https://github.com/Neulhan">#Neulhan</a>
+                  <a href="https://github.com/ektmf7890">#ektmf7890</a>
+                  <a href="https://github.com/JungeunK-9999">#JungeunK-9999</a>
+                </div>
+                <div class="links">
+                  <a href="https://github.com/Neulhan/UnivClock">
+                    <img src="../src/image/icon/github.svg" alt="" />
+                  </a>
+                  <a href="https://www.weehan.com/">
+                    <img
+                      src="https://avatars2.githubusercontent.com/u/50257388?s=200&v=4"
+                      alt=""
+                    />
+                  </a>
+                  <a href="">
+                    <img
+                      src="https://avatars2.githubusercontent.com/u/36146832?s=200&v=4"
+                      alt=""
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
