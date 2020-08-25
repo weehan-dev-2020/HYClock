@@ -1,6 +1,3 @@
-const backgroundInput = document.getElementById("background-input");
-const resetBackground = document.querySelector(".reset-background");
-
 const setBackground = () => {
   const background = localStorage.getItem("univclock-background");
   if (background) {
@@ -14,24 +11,31 @@ const setBackground = () => {
   }
 };
 
-backgroundInput.addEventListener("change", (e) => {
-  const maxSize = 3 * 1024 * 1024;
-  const fileSize = e.target.files[0].size;
-  console.log(fileSize / 1024 / 1024);
-  if (fileSize > maxSize) {
-    alert("첨부파일 사이즈는 5MB 이내로 등록 가능합니다.");
-    e.target.value = "";
-    return;
-  }
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    localStorage.setItem("univclock-background", reader.result);
-    setBackground();
-  };
-  reader.readAsDataURL(e.target.files[0]);
-});
+const loadBackground = () => {
+  const backgroundInput = document.getElementById("background-input");
+  const resetBackground = document.querySelector(".reset-background");
 
-resetBackground.addEventListener("click", (e) => {
-  localStorage.removeItem("univclock-background");
-  setBackground();
-});
+  backgroundInput.addEventListener("change", (e) => {
+    const maxSize = 3 * 1024 * 1024;
+    const fileSize = e.target.files[0].size;
+    console.log(fileSize / 1024 / 1024);
+    if (fileSize > maxSize) {
+      alert("첨부파일 사이즈는 5MB 이내로 등록 가능합니다.");
+      e.target.value = "";
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      localStorage.setItem("univclock-background", reader.result);
+      setBackground();
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  });
+
+  resetBackground.addEventListener("click", (e) => {
+    localStorage.removeItem("univclock-background");
+    setBackground();
+  });
+};
+
+window.addEventListener("load", loadBackground);

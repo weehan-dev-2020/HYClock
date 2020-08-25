@@ -1,0 +1,52 @@
+.navigation {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between; }
+  .navigation .left-side {
+    display: flex; }
+    .navigation .left-side .tab-container.weather-container .open-check:checked + .modal.weather-modal {
+      left: 16px;
+      top: 48px;
+      bottom: unset; }
+    .navigation .left-side .tab-container.hy-notice-container {
+      margin-left: 16px; }
+      .navigation .left-side .tab-container.hy-notice-container .open-check:checked + .modal.hy-notice-modal {
+        left: 16px;
+        top: 48px;
+        bottom: unset; }
+  .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal {
+    right: 16px;
+    top: 48px;
+    bottom: unset; }
+    .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal .title {
+      margin: 0; }
+    .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal .roulette {
+      height: 60px;
+      overflow: hidden;
+      position: relative; }
+      .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal .roulette .roulette-items {
+        position: absolute; }
+        .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal .roulette .roulette-items.rolling {
+          -webkit-animation: roll 0.2s 0s infinite ease-in-out alternate; }
+        .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal .roulette .roulette-items .roulette-item {
+          font-size: 24px;
+          font-weight: 900;
+          width: 252px;
+          height: 60px;
+          box-sizing: border-box;
+          padding-left: 16px;
+          display: flex;
+          align-items: center; }
+    .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal .button {
+      width: 100%;
+      height: 32px;
+      font-size: 16px;
+      font-weight: 700; }
+
+@keyframes roll {
+  0% {
+    top: 0px; }
+  100% {
+    top: -240px; } }
+
+/*# sourceMappingURL=navigation.css.map */

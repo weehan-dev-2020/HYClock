@@ -1,21 +1,27 @@
-.tab-container {
-  .open-label {
-    display: block;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+.modal-wrapper {
+  position: absolute;
+  &.left {
+    left: 16px;
   }
-  .modal {
-    display: none;
+  &.top {
+    top: 48px;
+  }
+  &.right {
+    right: 16px;
+  }
+  &.bottom {
+    bottom: 48px;
   }
 
+  .modal {
+    display: none;
+    margin-bottom: 16px;
+  }
   .open-check:checked + .modal {
     display: flex;
     flex-direction: column;
     padding: 24px;
-    position: absolute;
     color: white;
-    bottom: 48px;
     width: 300px;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.6);
@@ -48,6 +54,56 @@
     }
   }
 }
+.tab-container {
+  .open-label {
+    display: block;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  // .modal {
+  //   display: none;
+  // }
+
+  // .open-check:checked + .modal {
+  //   display: flex;
+  //   flex-direction: column;
+  //   padding: 24px;
+  //   position: absolute;
+  //   color: white;
+  //   bottom: 48px;
+  //   width: 300px;
+  //   z-index: 1;
+  //   background-color: rgba(0, 0, 0, 0.6);
+
+  //   .title {
+  //     font-size: 16px;
+  //     font-weight: 700;
+  //     margin-bottom: 10px;
+  //   }
+  //   .sub-title {
+  //     font-size: 14px;
+  //     margin: 12px 0 8px;
+  //   }
+  //   .info {
+  //     margin-top: 2px;
+  //     color: #888;
+  //   }
+  //   .button {
+  //     background-color: #e6e6e6;
+  //     width: 120px;
+  //     color: #292931;
+  //     height: 24px;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     cursor: pointer;
+  //     &:hover {
+  //       background-color: #bbb;
+  //     }
+  //   }
+  // }
+}
 
 .footer {
   width: 100%;
@@ -57,16 +113,10 @@
   display: flex;
   padding: 1rem;
   justify-content: space-between;
-  .background-container {
-    position: relative;
-    display: flex;
-    align-items: center;
+  .left-side {
   }
-  .developer-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    #open-developer-modal:checked + .developer-modal {
+  .rigth-side {
+    .open-check:checked + .developer-modal {
       right: 0;
       .developer-info-wrapper {
         .links {

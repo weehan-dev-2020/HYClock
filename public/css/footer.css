@@ -1,43 +1,51 @@
+.modal-wrapper {
+  position: absolute; }
+  .modal-wrapper.left {
+    left: 16px; }
+  .modal-wrapper.top {
+    top: 48px; }
+  .modal-wrapper.right {
+    right: 16px; }
+  .modal-wrapper.bottom {
+    bottom: 48px; }
+  .modal-wrapper .modal {
+    display: none;
+    margin-bottom: 16px; }
+  .modal-wrapper .open-check:checked + .modal {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    color: white;
+    width: 300px;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6); }
+    .modal-wrapper .open-check:checked + .modal .title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px; }
+    .modal-wrapper .open-check:checked + .modal .sub-title {
+      font-size: 14px;
+      margin: 12px 0 8px; }
+    .modal-wrapper .open-check:checked + .modal .info {
+      margin-top: 2px;
+      color: #888; }
+    .modal-wrapper .open-check:checked + .modal .button {
+      background-color: #e6e6e6;
+      width: 120px;
+      color: #292931;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer; }
+      .modal-wrapper .open-check:checked + .modal .button:hover {
+        background-color: #bbb; }
+
 .tab-container .open-label {
   display: block;
   color: white;
   font-size: 16px;
   cursor: pointer; }
-
-.tab-container .modal {
-  display: none; }
-
-.tab-container .open-check:checked + .modal {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  position: absolute;
-  color: white;
-  bottom: 48px;
-  width: 300px;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.6); }
-  .tab-container .open-check:checked + .modal .title {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 10px; }
-  .tab-container .open-check:checked + .modal .sub-title {
-    font-size: 14px;
-    margin: 12px 0 8px; }
-  .tab-container .open-check:checked + .modal .info {
-    margin-top: 2px;
-    color: #888; }
-  .tab-container .open-check:checked + .modal .button {
-    background-color: #e6e6e6;
-    width: 120px;
-    color: #292931;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer; }
-    .tab-container .open-check:checked + .modal .button:hover {
-      background-color: #bbb; }
 
 .footer {
   width: 100%;
@@ -47,34 +55,26 @@
   display: flex;
   padding: 1rem;
   justify-content: space-between; }
-  .footer .background-container {
-    position: relative;
-    display: flex;
-    align-items: center; }
-  .footer .developer-container {
-    position: relative;
-    display: flex;
-    align-items: center; }
-    .footer .developer-container #open-developer-modal:checked + .developer-modal {
-      right: 0; }
-      .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .links {
-        margin-top: 20px;
-        display: flex; }
-        .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .links a {
-          display: block;
-          width: 32px;
-          height: 32px;
-          margin-right: 8px; }
-          .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .links a img {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-            background-color: white; }
-      .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .names a {
-        font-weight: 700;
-        font-size: 20px;
-        color: white; }
-        .footer .developer-container #open-developer-modal:checked + .developer-modal .developer-info-wrapper .names a:hover {
-          color: skyblue; }
+  .footer .rigth-side .open-check:checked + .developer-modal {
+    right: 0; }
+    .footer .rigth-side .open-check:checked + .developer-modal .developer-info-wrapper .links {
+      margin-top: 20px;
+      display: flex; }
+      .footer .rigth-side .open-check:checked + .developer-modal .developer-info-wrapper .links a {
+        display: block;
+        width: 32px;
+        height: 32px;
+        margin-right: 8px; }
+        .footer .rigth-side .open-check:checked + .developer-modal .developer-info-wrapper .links a img {
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+          background-color: white; }
+    .footer .rigth-side .open-check:checked + .developer-modal .developer-info-wrapper .names a {
+      font-weight: 700;
+      font-size: 20px;
+      color: white; }
+      .footer .rigth-side .open-check:checked + .developer-modal .developer-info-wrapper .names a:hover {
+        color: skyblue; }
 
 /*# sourceMappingURL=footer.css.map */

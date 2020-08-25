@@ -7,7 +7,6 @@
 }
 
 #root > .navigation {
-  height: 60px;
   display: fixed;
   top: 0;
   left: 0;
