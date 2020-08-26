@@ -2,7 +2,8 @@
 
 ## 미리보기
 
-![](src/image/preview.png)
+![](src/image/preview1.png)
+![](src/image/preview2.png)
 
 ## 프로젝트 시작하기
 
