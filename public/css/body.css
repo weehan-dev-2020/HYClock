@@ -5,23 +5,31 @@
   align-items: center;
   flex-direction: column;
 }
+.invisible {
+  display: none;
+}
 .body .time {
   color: white;
   text-shadow: 0 1px 3px #00000027;
 }
-.body #timer {
+.body #timer,
+#stopwatch {
   color: white;
   font-size: 90px;
   font-weight: 900;
   text-shadow: 0 1px 3px #00000027;
 }
-.body #word {
+.body .word,
+.footer .word {
   margin-top: 0.5rem;
   color: white;
   font-size: 24px;
   font-weight: 100;
 }
-
+.bodt .link-list {
+  position: absolute;
+  bottom: 0;
+}
 .body .link-list li {
   float: left;
 }
