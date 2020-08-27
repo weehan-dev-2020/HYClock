@@ -22,17 +22,15 @@ const askGrade = () => {
     console.log("askGrade");
     const gradeForm = document.querySelector(".grade");
     gradeForm.classList.remove("invisible");
-    gradeForm.addEventListener("submit", saveGrade);
+    gradeForm.addEventListener("submit", submitHandle);
 }
 
 const setGrade = () => {
     const grade = localStorage.getItem("univclock-userGrade");
     if (grade === 'NaN' || grade === null) {
-        console.log(1)
         const gradeInput = askGrade();
         saveGrade(gradeInput);
     } else {
-        console.log(2)
     }
 };
 
