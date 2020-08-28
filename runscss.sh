@@ -1,0 +1,1 @@
+node-sass --watch src/scss --output public/css --source-map true

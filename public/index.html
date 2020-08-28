@@ -5,17 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <script src="js/config.js"></script>
+    <script src="js/background.js"></script>
     <script src="js/index.js"></script>
     <script src="js/timer.js"></script>
+    <script src="js/randomMenu.js"></script>
     <link rel="stylesheet" href="css/init.css" />
     <link rel="stylesheet" href="css/root.css" />
     <link rel="stylesheet" href="css/body.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
     <title>새 탭</title>
   </head>
   <body>
     <div id="root">
-      <div class="navigation"></div>
+      <div class="navigation">
+        <div class="left-side">
+          <div class="modal-wrapper left top">
+            <input
+              hidden
+              type="checkbox"
+              class="open-check"
+              id="open-weather-modal"
+            />
+            <div class="modal weather-modal">
+              <div class="title">왕십리 날씨</div>
+            </div>
+            <input
+              hidden
+              type="checkbox"
+              class="open-check"
+              id="open-hy-notice-modal"
+            />
+            <div class="modal hy-notice-modal">
+              <div class="title">학사공지</div>
+            </div>
+          </div>
+          <div class="tab-container weather-container">
+            <label for="open-weather-modal" class="open-label no-drag">
+              왕십리 날씨
+            </label>
+          </div>
+          <div class="tab-container hy-notice-container">
+            <label for="open-hy-notice-modal" class="open-label no-drag">
+              학사공지
+            </label>
+          </div>
+        </div>
+        <div class="right-side">
+          <div class="modal-wrapper right top">
+            <input
+              hidden
+              type="checkbox"
+              class="open-check"
+              id="open-random-food-modal"
+            />
+            <div class="modal random-food-modal">
+              <div class="title">오늘 뭐 먹지?</div>
+              <div class="roulette">
+                <div class="roulette-items"></div>
+              </div>
+              <div id="roll-random-food" class="button">메뉴 고르기</div>
+            </div>
+          </div>
+          <div class="tab-container random-food-container">
+            <label for="open-random-food-modal" class="open-label no-drag">
+              오늘 뭐 먹지?
+            </label>
+          </div>
+        </div>
+      </div>
       <div class="body">
         <p class="word">종강까지 남은 시간</p>
         <p id="timer" class="time"><br /></p>
@@ -109,68 +167,88 @@
         </form>
       </div>
       <div class="footer">
-        <div class="background-container container">
-          <label
-            for="open-background-change-modal"
-            class="background-change-label no-drag"
-          >
-            배경화면 수정
-          </label>
-          <input hidden type="checkbox" id="open-background-change-modal" />
-          <div class="background-change-modal">
-            <div class="title">배경화면 수정</div>
-            <div class="sub-title">사진 업로드</div>
-            <label class="button" for="background-input">배경화면 선택</label>
-            <div class="info">사진 업로드는 5MB 이하로만 가능합니다.</div>
+        <div class="left-side">
+          <div class="modal-wrapper left bottom">
             <input
               hidden
-              type="file"
-              name=""
-              id="background-input"
-              accept="image/*"
+              type="checkbox"
+              class="open-check"
+              id="open-background-change-modal"
             />
-            <div class="sub-title">사진 초기화</div>
-            <div class="reset-background button">배경화면 초기화</div>
-            <div class="info">기본 배경화면으로 초기화합니다.</div>
+            <div class="background-change-modal modal">
+              <div class="title">배경화면 수정</div>
+              <div class="sub-title">사진 업로드</div>
+              <label class="button" for="background-input">배경화면 선택</label>
+              <div class="info">사진 업로드는 5MB 이하로만 가능합니다.</div>
+              <input
+                hidden
+                type="file"
+                name=""
+                id="background-input"
+                accept="image/*"
+              />
+              <div class="sub-title">사진 초기화</div>
+              <div class="reset-background button">배경화면 초기화</div>
+              <div class="info">기본 배경화면으로 초기화합니다.</div>
+            </div>
+          </div>
+          <div class="background-container tab-container">
+            <label
+              for="open-background-change-modal"
+              class="background-change-label open-label no-drag"
+            >
+              배경화면 수정
+            </label>
           </div>
         </div>
         <p id="word" class="word">명언</p>
-        <div class="developer-container container">
-          <label for="open-developer-modal" class="developer-label no-drag">
-            개발자 정보
-          </label>
-          <input hidden type="checkbox" id="open-developer-modal" />
-          <div class="developer-modal">
-            <div class="title">개발자 정보</div>
+        <div class="rigth-side">
+          <div class="modal-wrapper right bottom">
+            <input
+              hidden
+              type="checkbox"
+              class="open-check"
+              id="open-developer-modal"
+            />
+            <div class="developer-modal modal">
+              <div class="title">개발자 정보</div>
 
-            <div class="developer-info-wrapper">
-              <div class="names">
-                <a href="https://github.com/Neulhan">#Neulhan</a>
-                <a href="https://github.com/ektmf7890">#ektmf7890</a>
-                <a href="https://github.com/JungeunK-9999">#JungeunK-9999</a>
-              </div>
-              <div class="links">
-                <a href="https://github.com/Neulhan/UnivClock">
-                  <img src="../src/image/icon/github.svg" alt="" />
-                </a>
-                <a href="https://www.weehan.com/">
-                  <img
-                    src="https://avatars2.githubusercontent.com/u/50257388?s=200&v=4"
-                    alt=""
-                  />
-                </a>
-                <a href="">
-                  <img
-                    src="https://avatars2.githubusercontent.com/u/36146832?s=200&v=4"
-                    alt=""
-                  />
-                </a>
+              <div class="developer-info-wrapper">
+                <div class="names">
+                  <a href="https://github.com/Neulhan">#Neulhan</a>
+                  <a href="https://github.com/ektmf7890">#ektmf7890</a>
+                  <a href="https://github.com/JungeunK-9999">#JungeunK-9999</a>
+                </div>
+                <div class="links">
+                  <a href="https://github.com/Neulhan/UnivClock">
+                    <img src="../src/image/icon/github.svg" alt="" />
+                  </a>
+                  <a href="https://www.weehan.com/">
+                    <img
+                      src="https://avatars2.githubusercontent.com/u/50257388?s=200&v=4"
+                      alt=""
+                    />
+                  </a>
+                  <a href="">
+                    <img
+                      src="https://avatars2.githubusercontent.com/u/36146832?s=200&v=4"
+                      alt=""
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+          <div class="developer-container tab-container">
+            <label
+              for="open-developer-modal"
+              class="developer-label open-label no-drag"
+            >
+              개발자 정보
+            </label>
+          </div>
         </div>
       </div>
-      <script src="js/background.js"></script>
     </div>
   </body>
 </html>
