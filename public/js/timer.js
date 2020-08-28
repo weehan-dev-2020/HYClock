@@ -34,12 +34,41 @@ const setGrade = () => {
     }
 };
 
+// 자동화 할 때는 -years로 계산합니다
+// 12학번 이전은 어떻게 할 지 고민중
+const getEnterDay = () => {
+    const grade = localStorage.getItem("univclock-userGrade");
+    if (grade === '12') {
+        return new Date(2012, 01, 24);
+    } else if (grade === '13') {
+        return new Date(2013, 01, 24);
+    } else if (grade === '14') {
+        return new Date(2014, 01, 24);
+    } else if (grade === '15') {
+        return new Date(2015, 01, 24);
+    } else if (grade === '16') {
+        return new Date(2016, 01, 24);
+    } else if (grade === '17') {
+        return new Date(2017, 01, 24);
+    } else if (grade === '18') {
+        return new Date(2018, 01, 24);
+    } else if (grade === '19') {
+        return new Date(2019, 01, 24);
+    } else if (grade === '20') {
+        return new Date(2020, 01, 24);
+    }
+}
+
 const setStopwatch = (startDay) => {
-    const now = new Date();
-    const time = now - startDay;
-    const date = Math.floor(time / (1000 * 60 * 60 * 24));
     const timerEl = document.getElementById("stopwatch");
-    timerEl.innerText = `+ ${date}일`;
+    if (startDay === 'NaN' || startDay === null || startDay === undefined) {
+        timerEl.innerText = `???일 째`;
+    } else {
+        const now = new Date();
+        const time = now - startDay;
+        const date = Math.floor(time / (1000 * 60 * 60 * 24));
+        timerEl.innerText = `+ ${date}일 째`;
+    }
 };
 
 const setTimer = (dDay) => {
@@ -53,7 +82,7 @@ const setTimer = (dDay) => {
 
 const loadTimer = () => {
     const dDay = new Date(2020, 11, 21);
-    const enterDay = new Date(2020, 01, 24);
+    const enterDay = getEnterDay();
     setTimer(dDay);
     setGrade();
     setStopwatch(enterDay);
