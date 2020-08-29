@@ -5,15 +5,62 @@
   align-items: center;
   flex-direction: column;
 }
-.body #main-time {
+.invisible {
+  visibility: hidden;
+}
+.body .time {
   color: white;
-  font-size: 96px;
-  font-weight: 900;
   text-shadow: 0 1px 3px #00000027;
 }
-.body #word {
+.body #timer,
+#stopwatch {
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+  text-shadow: 0 1px 3px #00000027;
+}
+.body .word,
+.footer .word {
   margin-top: 0.5rem;
   color: white;
   font-size: 24px;
   font-weight: 100;
+}
+.bodt .link-list {
+  position: absolute;
+  bottom: 0;
+}
+.body .link-list li {
+  float: left;
+}
+.body .link-list li a {
+  text-decoration: none;
+}
+.body .link-list .favorite-link {
+  width: 112px;
+  height: 112px;
+  margin: 0px 0px 16px;
+  padding: 16px 0px 0px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.body .link-list li .favorite-link .favorite-icon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(220, 220, 220, 0.6);
+  border-radius: 50%;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.body .link-list li div div img {
+  width: 27px;
+  height: 27px;
+  padding: 10.5px;
+}
+.body .link-list .favorite-link .favorite-name {
+  color: #fafafa;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
 }
