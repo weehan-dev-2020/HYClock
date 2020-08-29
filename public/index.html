@@ -7,6 +7,7 @@
     <script src="js/config.js"></script>
     <script src="js/background.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/cs.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/randomMenu.js"></script>
     <link rel="stylesheet" href="css/init.css" />
@@ -202,7 +203,7 @@
           </div>
         </div>
         <p id="word" class="word">명언</p>
-        <div class="rigth-side">
+        <div class="right-side">
           <div class="modal-wrapper right bottom">
             <input
               hidden
@@ -238,6 +239,32 @@
                 </div>
               </div>
             </div>
+            <input
+              hidden
+              type="checkbox"
+              class="open-check"
+              id="open-suggestion-modal"
+            />
+            <div class="suggestion-modal modal">
+              <div class="title">건의사항</div>
+              <div class="sub-title">여러분의 의견을 적극 반영하겠습니다.</div>
+              <textarea id="cs-content" placeholder="기능과, 명언 추가, 제거 그 밖에 개선사항을 적어주시면 적극 고려하여 반영하겠습니다."></textarea>
+              <div class="sub-title">결과를 받아볼 이메일을 적어주세요.</div>
+              <input type="text" id="cs-email" placeholder="이메일 주소">
+              <button class="button" id="cs-button">
+                <div class="text">개발자한테 보내기</div>
+                <img class="loading" src="../src/image/loading-nobackground.svg" width="32">
+              </button>
+            </div>
+          </div>
+
+          <div class="suggestion-container tab-container">
+              <label
+                  for="open-suggestion-modal"
+                  class="suggestion-label open-label no-drag"
+                >
+                건의사항
+              </label>
           </div>
           <div class="developer-container tab-container">
             <label
@@ -246,6 +273,7 @@
             >
               개발자 정보
             </label>
+            <label for=""></label>
           </div>
         </div>
       </div>
