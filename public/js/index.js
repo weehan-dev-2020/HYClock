@@ -39,13 +39,18 @@ const getWordList = () => {
       Accept: "application/json, text/plain",
       "Content-Type": "application/json;charset=UTF-8",
     },
-  }).then(async (response) => {
-    const { data: wordList } = await response.json();
-    config.wordList = wordList;
-    const randomWord =
-      config.wordList[Math.floor(Math.random() * config.wordList.length)];
-    wordEl.innerText = randomWord;
-  });
+  })
+    .then(async (response) => {
+      const { data: wordList } = await response.json();
+      config.wordList = wordList;
+      const randomWord =
+        config.wordList[Math.floor(Math.random() * config.wordList.length)];
+      wordEl.innerText = randomWord;
+    })
+    .catch((err) => {
+      wordEl.innerText =
+        "대충 검은 화면에 흰 글씨 쓰면 명언같아 보인다 - 침착맨";
+    });
 };
 
 const windowOnload = () => {

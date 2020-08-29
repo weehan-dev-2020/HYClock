@@ -12,25 +12,33 @@ function getRandom(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-const getMenuList = () => {
+const setMenuHTML = () => {
   const rouletteEl = document.querySelector(".roulette-items");
+  let menu;
+  for (let i = 0; i < config.menuList.length; i++) {
+    menu = document.createElement("div");
+    menu.innerText = config.menuList[i];
+    menu.classList.add("roulette-item");
+    rouletteEl.appendChild(menu);
+  }
+};
+
+const getMenuList = () => {
   fetch("http://127.0.0.1:8000/menulist", {
     method: "GET",
     headers: {
       Accept: "application/json, text/plain",
       "Content-Type": "application/json;charset=UTF-8",
     },
-  }).then(async (response) => {
-    const { data: menulist } = await response.json();
-    config.menuList = menulist;
-    let menu;
-    for (let i = 0; i < config.menuList.length; i++) {
-      menu = document.createElement("div");
-      menu.innerText = config.menuList[i];
-      menu.classList.add("roulette-item");
-      rouletteEl.appendChild(menu);
-    }
-  });
+  })
+    .then(async (response) => {
+      const { data: menulist } = await response.json();
+      config.menuList = menulist;
+      setMenuHTML();
+    })
+    .catch(() => {
+      setMenuHTML();
+    });
 };
 
 const loadRandomMenu = () => {
