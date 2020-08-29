@@ -73,7 +73,39 @@
   justify-content: space-between;
   .left-side {
   }
-  .rigth-side {
+  .right-side {
+    display: flex;
+    justify-content: flex-end;
+    label:first-child {
+      margin-left: 16px;
+    }
+    .open-check:checked + .suggestion-modal {
+      textarea,
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+      }
+      textarea {
+        height: 200px;
+      }
+      .button {
+        width: 100%;
+        height: 40px;
+        margin-top: 20px;
+        .loading {
+          display: none;
+        }
+        &:disabled {
+          .text {
+            display: none;
+          }
+          .loading {
+            display: block;
+          }
+        }
+      }
+    }
     .open-check:checked + .developer-modal {
       right: 0;
       .developer-info-wrapper {
