@@ -1,8 +1,6 @@
 const saveGrade = (gradeInput) => {
     try {
-        console.log("saveGrade");
         gradeInput = parseInt(gradeInput);
-        console.log(gradeInput)
         localStorage.setItem("univclock-userGrade", gradeInput);
     }
     catch (e) {
@@ -12,14 +10,12 @@ const saveGrade = (gradeInput) => {
 }
 
 const submitHandle = () => {
-    console.log("submitHandle");
     const gradeForm = document.querySelector(".grade");
     const gradeInput = gradeForm.querySelector("select").value;
     saveGrade(gradeInput);
 }
 
 const askGrade = () => {
-    console.log("askGrade");
     const gradeForm = document.querySelector(".grade");
     gradeForm.classList.remove("invisible");
     gradeForm.addEventListener("submit", submitHandle);
@@ -59,6 +55,11 @@ const getEnterDay = () => {
     }
 }
 
+const resetGrade = () => {
+    localStorage.setItem("univclock-userGrade", "NaN");
+    setGrade();
+}
+
 const setStopwatch = (startDay) => {
     const timerEl = document.getElementById("stopwatch");
     if (startDay === 'NaN' || startDay === null || startDay === undefined) {
@@ -67,7 +68,7 @@ const setStopwatch = (startDay) => {
         const now = new Date();
         const time = now - startDay;
         const date = Math.floor(time / (1000 * 60 * 60 * 24));
-        timerEl.innerText = `지금까지 한양과 ${date}일을 함께했습니다`;
+        timerEl.innerHTML = `<span>지금까지 한양과 ${date}일을 함께했습니다</span><button onClick="resetGrade()" style="color: white; padding: 0;">🖋</button>`
     }
 };
 

@@ -19,11 +19,16 @@ const askName = () => {
 
 const getName = () => {
   let userName = localStorage.getItem("univclock-userName");
-  if (userName === null) {
+  if (userName === null || userName === "학우") {
     userName = ""
     askName();
   }
   return userName;
+}
+
+const resetName = () => {
+  localStorage.removeItem("univclock-userName");
+  getName();
 }
 
 const setName = () => {
@@ -32,7 +37,7 @@ const setName = () => {
     userName = "학우"
   }
   const nameEl = document.getElementById("name");
-  nameEl.innerText = `${userName}님의 종강까지 남은 시간`
+  nameEl.innerHTML = `<span>${userName}님의 종강까지 남은 시간</span><button onClick="resetName()" style="color: white; padding: 0;">🖋</button>`
 }
 
 const setTime = () => {
