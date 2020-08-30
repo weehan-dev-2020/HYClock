@@ -37,7 +37,7 @@ const setName = () => {
     userName = "학우"
   }
   const nameEl = document.getElementById("name");
-  nameEl.innerHTML = `<span>${userName}님의 종강까지 남은 시간</span><button onClick="resetName()" style="color: white; padding: 0;">🖋</button>`
+  nameEl.innerHTML = `<span><button onClick="resetName()" class="word" style="padding:0;">${userName}</button>님의 종강까지 남은 시간</span>`
 }
 
 const setTime = () => {
