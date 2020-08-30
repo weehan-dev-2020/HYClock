@@ -74,97 +74,112 @@
           </div>
         </div>
       </div>
-      <div class="body">
-        <p class="word">종강까지 남은 시간</p>
-        <p id="timer" class="time"><br /></p>
-        <p class="word"><br /></p>
-        <p class="word invisible">학번을 입력해주세요</p>
-        <form class="grade invisible">
-          <select name="" id="">
-            <option value=""></option>
-            <option value="20">20학번</option>
-            <option value="19">19학번</option>
-            <option value="18">18학번</option>
-            <option value="17">17학번</option>
-            <option value="16">16학번</option>
-            <option value="15">15학번</option>
-            <option value="14">14학번</option>
-          </select>
-          <input type="submit" value="햣" />
-        </form>
-        <p id="main-time" class="time word"><br /></p        <p class="word"></p>
-        <p id="stopwatch" class="time"><br /></p>
 
-        <div class="link-list">
-          <ul>
-            <li>
-              <a href="https://portal.hanyang.ac.kr/sso/lgin.do"
-                ><div class="favorite-link">
-                  <img
-                    class="favorite-icon"
-                    src="../src/image/icon/hy-in.png"
-                    alt="포털"
-                  />
-                  <div class="favorite-name"><span>HY-In</span></div>
-                </div></a
-              >
-            </li>
-            <li>
-              <a href="https://learn.hanyang.ac.kr/"
-                ><div class="favorite-link">
-                  <img
-                    class="favorite-icon"
-                    src="../src/image/icon/blackboard.png"
-                    alt="한양대"
-                  />
-                  <div class="favorite-name"><span>블랙보드</span></div>
-                </div></a
-              >
-            </li>
-            <li>
-              <a href="https://hy-maps.com/"
-                ><div class="favorite-link">
-                  <img
-                    class="favorite-icon"
-                    src="../src/image/icon/hy-in.png"
-                    alt="지도"
-                  />
-                  <div class="favorite-name"><span>HY-Maps</span></div>
-                </div></a
-              >
-            </li>
-            <li>
-              <a href="https://www.hanyang.ac.kr/web/www/hub">
-                <div class="favorite-link">
-                  <div class="favorite-icon">
+      <div class="body">
+        <div class="wrapper">
+          <form class="name invisible">
+            <input type="text" placeholder="이름을 입력하세요" />
+            <input type="submit" value="햣" />
+          </form>
+          <p id="name" class="word">학우님의 종강까지 남은 시간</p>
+          <p id="timer" class="time">TIMER</p>
+          <div>
+            <form class="grade invisible">
+              <select name="" id="">
+                <option value=""></option>
+                <option value="x" selected>학번을 입력하세요</option>
+                <option value="20">20학번</option>
+                <option value="19">19학번</option>
+                <option value="18">18학번</option>
+                <option value="17">17학번</option>
+                <option value="16">16학번</option>
+                <option value="15">15학번</option>
+                <option value="14">14학번</option>
+              </select>
+              <input type="submit" value="햣" />
+            </form>
+          </div>
+          <p id="main-time" class="time word">
+            지금까지 한양과 ???일을 함께했습니다
+          </p>
+          <p id="stopwatch" class="time word">
+            지금까지 한양과 ???일을 함께했습니다
+          </p>
+
+          <p class="invisible">바로가기</p>
+          <div class="link-list">
+            <ul>
+              <li>
+                <a href="https://portal.hanyang.ac.kr/sso/lgin.do"
+                  ><div class="favorite-link">
                     <img
-                      src="../src/image/icon/HYU_symbol_basic_png.png"
+                      class="favorite-icon"
+                      src="../src/image/icon/hy-in.png"
+                      alt="포털"
+                    />
+                    <div class="favorite-name"><span>HY-In</span></div>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a href="https://learn.hanyang.ac.kr/"
+                  ><div class="favorite-link">
+                    <img
+                      class="favorite-icon"
+                      src="../src/image/icon/blackboard.png"
                       alt="한양대"
                     />
-                  </div>
-                  <div class="favorite-name"><span>한양대</span></div>
-                </div></a
-              >
-            </li>
-            <li>
-              <a href="https://lib.hanyang.ac.kr/"
-                ><div class="favorite-link">
-                  <div class="favorite-icon">
+                    <div class="favorite-name"><span>블랙보드</span></div>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a href="https://hy-maps.com/"
+                  ><div class="favorite-link">
                     <img
-                      src="../src/image/icon/HYU_logo_singlecolor_png.png"
-                      alt="도서관"
+                      class="favorite-icon"
+                      src="../src/image/icon/hy-in.png"
+                      alt="지도"
                     />
-                  </div>
-                  <div class="favorite-name"><span>백남학술정보관</span></div>
-                </div></a
-              >
-            </li>
-          </ul>
+                    <div class="favorite-name"><span>HY-Maps</span></div>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a href="https://www.hanyang.ac.kr/web/www/hub">
+                  <div class="favorite-link">
+                    <div class="favorite-icon">
+                      <img
+                        src="../src/image/icon/HYU_symbol_basic_png.png"
+                        alt="한양대"
+                      />
+                    </div>
+                    <div class="favorite-name"><span>한양대</span></div>
+                  </div></a
+                >
+              </li>
+              <li>
+                <a href="https://lib.hanyang.ac.kr/"
+                  ><div class="favorite-link">
+                    <div class="favorite-icon">
+                      <img
+                        src="../src/image/icon/HYU_logo_singlecolor_png.png"
+                        alt="도서관"
+                      />
+                    </div>
+                    <div class="favorite-name"><span>백남학술정보관</span></div>
+                  </div></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="link-list invisible">
+            <ul>
+              <p>..</p>
+            </ul>
+          </div>
         </div>
-        <form class="name invisible">
-          <input type="text" placeholder="이름을 입력하세요" />
-          <input type="submit" value="햣" />
-        </form>
       </div>
       <div class="footer">
         <div class="left-side">

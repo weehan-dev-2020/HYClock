@@ -62,12 +62,12 @@ const getEnterDay = () => {
 const setStopwatch = (startDay) => {
     const timerEl = document.getElementById("stopwatch");
     if (startDay === 'NaN' || startDay === null || startDay === undefined) {
-        timerEl.innerText = `???일 째`;
+        timerEl.innerText = `지금까지 한양과 ???일을 함께했습니다`;
     } else {
         const now = new Date();
         const time = now - startDay;
         const date = Math.floor(time / (1000 * 60 * 60 * 24));
-        timerEl.innerText = `+ ${date}일 째`;
+        timerEl.innerText = `지금까지 한양과 ${date}일을 함께했습니다`;
     }
 };
 

@@ -26,18 +26,27 @@ const getName = () => {
   return userName;
 }
 
-const setTime = (userName) => {
+const setName = () => {
+  let userName = getName();
+  if (userName === null || userName === '') {
+    userName = "학우"
+  }
+  const nameEl = document.getElementById("name");
+  nameEl.innerText = `${userName}님의 종강까지 남은 시간`
+}
+
+const setTime = () => {
   const d = new Date();
   const timeEl = document.getElementById("main-time");
-  timeEl.innerText = `${d.getFullYear()}년 ${d.getMonth()}월 ${d.getDate()}일 ${d.getHours()}시 ${d.getMinutes()}분, ${userName} 학우님이 한양과 함께한 지`;
+  timeEl.innerText = `${d.getFullYear()}년 ${d.getMonth()}월 ${d.getDate()}일 ${d.getHours()}시 ${d.getMinutes()}분,`;
 };
 
 const windowOnload = () => {
   const wordEl = document.getElementById("word");
   setBackground();
-  const userName = getName();
-  setTime(userName);
-  setInterval(setTime, 1000, userName);
+  setName();
+  setTime();
+  setInterval(setTime, 1000);
   const randomWord =
     config.wordList[Math.floor(Math.random() * config.wordList.length)];
   wordEl.innerText = randomWord;
