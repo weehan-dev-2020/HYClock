@@ -1,11 +1,10 @@
 const saveName = (nameInput) => {
   try {
     localStorage.setItem("univclock-userName", nameInput);
-  }
-  catch (e) {
+  } catch (e) {
     nameInput = "";
   }
-}
+};
 
 const askName = () => {
   const gradeForm = document.querySelector(".name");
@@ -15,16 +14,16 @@ const askName = () => {
     const nameInput = nameForm.querySelector("input").value;
     saveName(nameInput);
   });
-}
+};
 
 const getName = () => {
   let userName = localStorage.getItem("univclock-userName");
-  if (userName === null || userName === "학우") {
-    userName = ""
+  if (userName === null) {
+    userName = "";
     askName();
   }
   return userName;
-}
+};
 
 const resetName = () => {
   localStorage.removeItem("univclock-userName");
@@ -46,15 +45,34 @@ const setTime = () => {
   timeEl.innerText = `${d.getFullYear()}년 ${d.getMonth()}월 ${d.getDate()}일 ${d.getHours()}시 ${d.getMinutes()}분,`;
 };
 
-const windowOnload = () => {
+const getWordList = () => {
   const wordEl = document.getElementById("word");
+  fetch("http://127.0.0.1:8000/wordlist", {
+    method: "GET",
+    headers: {
+      Accept: "application/json, text/plain",
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+  })
+    .then(async (response) => {
+      const { data: wordList } = await response.json();
+      config.wordList = wordList;
+      const randomWord =
+        config.wordList[Math.floor(Math.random() * config.wordList.length)];
+      wordEl.innerText = randomWord;
+    })
+    .catch((err) => {
+      wordEl.innerText =
+        "대충 검은 화면에 흰 글씨 쓰면 명언같아 보인다 - 침착맨";
+    });
+};
+
+const windowOnload = () => {
   setBackground();
   setName();
   setTime();
   setInterval(setTime, 1000);
-  const randomWord =
-    config.wordList[Math.floor(Math.random() * config.wordList.length)];
-  wordEl.innerText = randomWord;
+  getWordList();
 };
 
 window.addEventListener("load", windowOnload);
