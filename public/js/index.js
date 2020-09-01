@@ -25,10 +25,24 @@ const getName = () => {
   return userName;
 };
 
-const setTime = (userName) => {
+const resetName = () => {
+  localStorage.removeItem("univclock-userName");
+  getName();
+}
+
+const setName = () => {
+  let userName = getName();
+  if (userName === null || userName === '') {
+    userName = "학우"
+  }
+  const nameEl = document.getElementById("name");
+  nameEl.innerHTML = `<span><button onClick="resetName()" class="word" style="padding:0;">${userName}</button>님의 종강까지 남은 시간</span>`
+}
+
+const setTime = () => {
   const d = new Date();
   const timeEl = document.getElementById("main-time");
-  timeEl.innerText = `${d.getFullYear()}년 ${d.getMonth()}월 ${d.getDate()}일 ${d.getHours()}시 ${d.getMinutes()}분, ${userName} 학우님이 한양과 함께한 지`;
+  timeEl.innerText = `${d.getFullYear()}년 ${d.getMonth()}월 ${d.getDate()}일 ${d.getHours()}시 ${d.getMinutes()}분,`;
 };
 
 const getWordList = () => {
@@ -55,9 +69,9 @@ const getWordList = () => {
 
 const windowOnload = () => {
   setBackground();
-  const userName = getName();
-  setTime(userName);
-  setInterval(setTime, 1000, userName);
+  setName();
+  setTime();
+  setInterval(setTime, 1000);
   getWordList();
 };
 
