@@ -37,16 +37,26 @@ const getNoticeInfo = (url) => {
     })
 };
 
+const changeBtnColor = function(other_page1, other_page2) {
+    this.classList.add("active-btn");
+    other_page1.classList.remove("active-btn");
+    other_page2.classList.remove("active-btn");
+}
+
 const loadNotice = () => {
     const url = 'https://hyclock.hanyang.life/notice/';
     getNoticeInfo(url);
-
     const page1  = document.querySelector("#notice-page1");
     const page2  = document.querySelector("#notice-page2");
     const page3  = document.querySelector("#notice-page3");
+    page1.classList.add("active-btn");
+
     page1.addEventListener("click", setPage.bind(null, "page1"));
     page2.addEventListener("click", setPage.bind(null, "page2"));
     page3.addEventListener("click", setPage.bind(null, "page3"));
+    page1.addEventListener("click", changeBtnColor.bind(page1, page2, page3));
+    page2.addEventListener("click", changeBtnColor.bind(page2, page1, page3));
+    page3.addEventListener("click", changeBtnColor.bind(page3, page1, page2));
 }
 
 window.addEventListener("load", loadNotice);
