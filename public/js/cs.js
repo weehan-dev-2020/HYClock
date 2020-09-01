@@ -46,7 +46,7 @@ const submitCS = (e) => {
     return;
   }
 
-  fetch("http://127.0.0.1:8000/suggestion", {
+  fetch("https://hyclock.hanyang.life/suggestion", {
     method: "POST",
     headers: {
       Accept: "application/json, text/plain",

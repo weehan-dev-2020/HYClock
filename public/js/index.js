@@ -33,7 +33,7 @@ const setTime = (userName) => {
 
 const getWordList = () => {
   const wordEl = document.getElementById("word");
-  fetch("http://127.0.0.1:8000/wordlist", {
+  fetch("https://hyclock.hanyang.life/wordlist", {
     method: "GET",
     headers: {
       Accept: "application/json, text/plain",

@@ -24,7 +24,7 @@ const setMenuHTML = () => {
 };
 
 const getMenuList = () => {
-  fetch("http://127.0.0.1:8000/menulist", {
+  fetch("https://hyclock.hanyang.life/menulist", {
     method: "GET",
     headers: {
       Accept: "application/json, text/plain",

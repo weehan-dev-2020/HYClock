@@ -71,6 +71,7 @@
   display: flex;
   padding: 1rem;
   justify-content: space-between;
+  align-items: center;
   .left-side {
   }
   .right-side {
@@ -87,7 +88,7 @@
         padding: 8px;
       }
       textarea {
-        height: 200px;
+        height: 120px;
       }
       .button {
         width: 100%;
