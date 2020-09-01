@@ -42,7 +42,19 @@
       height: 32px;
       font-size: 16px;
       font-weight: 700; }
-
+.current-temperature-img{
+  font-size: 30px;
+}
+.current-temperature-text{
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.pointer-cursor:hover{
+  cursor: pointer;
+}
 @keyframes roll {
   0% {
     top: 0px; }

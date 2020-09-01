@@ -10,6 +10,8 @@
     <script src="js/cs.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/randomMenu.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/notice.js"></script>
     <link rel="stylesheet" href="css/init.css" />
     <link rel="stylesheet" href="css/root.css" />
     <link rel="stylesheet" href="css/body.css" />
@@ -30,6 +32,11 @@
             />
             <div class="modal weather-modal">
               <div class="title">왕십리 날씨</div>
+              <div class="current-temperature">
+                <span class="current-temperature-img"></span>
+                <div class="current-temperature-text"></div>
+              </div>
+              <div><hr></div>
             </div>
             <input
               hidden
@@ -39,6 +46,34 @@
             />
             <div class="modal hy-notice-modal">
               <div class="title">학사공지</div>
+              <div>최신 학사공지 15개를 알려드립니다. 항목을 누르시면 링크로 이동해요!</div>
+              <div class="notice-box">
+                <div class="notice" id="notice0">
+                  <span class="notice-date"></span>
+                  <a class="notice-link"></a>
+                </div>
+                <div class="notice" id="notice1">
+                  <span class="notice-date"></span>
+                  <a class="notice-link"></a>
+                </div>
+                <div class="notice" id="notice2">
+                  <span class="notice-date"></span>
+                  <a class="notice-link"></a>
+                </div>
+                <div class="notice" id="notice3">
+                  <span class="notice-date"></span>
+                  <a class="notice-link"></a>
+                </div>
+                <div class="notice" id="notice4">
+                  <span class="notice-date"></span>
+                  <a class="notice-link"></a>
+                </div>
+              </div>
+              <div class="notice-pagination">
+                <span class="pointer-cursor" id="notice-page1">1</span>
+                <span class="pointer-cursor" id="notice-page2">2</span>
+                <span class="pointer-cursor" id="notice-page3">3</span>
+              </div>
             </div>
           </div>
           <div class="tab-container weather-container">
