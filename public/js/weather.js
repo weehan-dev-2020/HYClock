@@ -1,33 +1,21 @@
-const setWeatherIcon = (currentWeather) => {
-    const weather_img = document.querySelector(".current-temperature-img");
-    if (currentWeather['강수형태']==0){
-        if(currentWeather['하늘상태']==1){
-            weather_img.innerText = "☀️";
-        }
-        if(currentWeather['하늘상태']==3){
-            weather_img.innerText = "☁️";
-        }
-        if(currentWeather['하늘상태']==4){
-            weather_img.innerText = "🌥️"
-        }
-    }
-    if (currentWeather['강수형태']==1 || currentWeather['강수형태']==4 || currentWeather['강수형태']==5){
-        weather_img.innerText = "🌧️";
-    }
-    if(currentWeather['강수형태']==2 || currentWeather['강수형태']==6){
-        weather_img.innerText = "🌨️"
-    }
-    if(currentWeather['강수형태']==3 || currentWeather['강수형태']==7){
-        weather_img.innerText = "🌨️";
+const setHourlyWeather = (hourly_weather) => {
+    const boxes = document.getElementsByClassName("hourly-weather-box");
+    for(let i = 0; i < 4; i++){
+        const box = boxes[i];
+        const time = box.querySelector(".hourly-weather-time");
+        const emoji = box.querySelector(".hourly-weather-emoji");
+        const temp = box.querySelector(".hourly-weather-temp");
+        time.innerText = hourly_weather[i+1]['time'];
+        emoji.innerText = hourly_weather[i+1]['weather_emoji'];
+        temp.innerText = `${hourly_weather[i+1]['content']['3시간 기온']}°`;
     }
 }
 
-const setCurrentWeather = (data) => {
-    const currentHour = new Intl.NumberFormat('en-us', {minimumIntegerDigits: 2}).format(new Date().getHours())
-    const currentWeather = data[`${currentHour}00`];
-    const current_temperature = document.querySelector(".current-temperature-text");
-    current_temperature.innerText = `${currentWeather['기온']}°`;
-    setWeatherIcon(currentWeather);
+const setCurrentWeather = (current_weather, hourly_weather) => {
+    const current_temperature = document.querySelector(".current-temperature");
+    const current_sky_emoji = document.querySelector(".current-sky-emoji");
+    current_temperature.innerText = `${current_weather['content']['기온']}°`;
+    current_sky_emoji.innerText = hourly_weather[0]['weather_emoji'];
 }
 
 const getWeatherInfo = (url) => {
@@ -39,8 +27,9 @@ const getWeatherInfo = (url) => {
         }
     })
     .then(async (response) => {
-        const data = await response.json()
-        setCurrentWeather(data['ultra_srt_fcst']);
+        const data = await response.json();
+        setCurrentWeather(data['current_weather'], data['three_hourly_weather']);
+        setHourlyWeather(data['three_hourly_weather']);
     })
     .catch((error) => {
         console.error(error)
@@ -48,7 +37,7 @@ const getWeatherInfo = (url) => {
 };
 
 const loadWeather = () => {
-    const url = 'https://hyclock.hanyang.life/weather/';
+    const url = 'http://hyclock.site/weather/';
     getWeatherInfo(url);
 };
 

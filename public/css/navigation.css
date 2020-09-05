@@ -44,10 +44,10 @@
       height: 32px;
       font-size: 16px;
       font-weight: 700; }
-.current-temperature-img{
+.current-sky-emoji{
   font-size: 30px;
 }
-.current-temperature-text{
+.current-temperature{
   display: inline-block;
   height: 40px;
   line-height: 40px;
@@ -91,6 +91,23 @@
   width: 50%;
   margin: 0 auto;
   justify-content: space-between;
+}
+.hourly-weather {
+  display: flex;
+  justify-content: space-between;
+}
+.hourly-weather-box { 
+  display: inline-box;
+  width:25%;
+}
+.hourly-weather-time{
+  text-align: center;
+}
+.hourly-weather-emoji{
+  margin-left: 6px;
+}
+.hourly-weather-info {
+  margin-top: 5px;
 }
 @keyframes roll {
   0% {
