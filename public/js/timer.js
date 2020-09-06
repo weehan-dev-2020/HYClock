@@ -68,8 +68,9 @@ const setStopwatch = (startDay) => {
         const now = new Date();
         const time = now - startDay;
         const date = Math.floor(time / (1000 * 60 * 60 * 24));
-        timerEl.innerHTML = `<span>지금까지 한양과 <button onClick="resetGrade()" class="word" style="padding: 0; margin:0px;">${date}</button>일을 함께했습니다</span>`
-        // timerEl.innerHTML = `<span>지금까지 한양과 ${date}일을 함께했습니다</span><button onClick="resetGrade()" style="color: white; padding: 0;">🖋</button>`
+        timerEl.innerHTML = `<span>지금까지 한양과 <button id="gradebutton" class="word" style="padding: 0; margin:0px;">${date}</button>일을 함께했습니다</span>`;
+        const gradebuttonEl = document.getElementById("gradebutton");
+        gradebuttonEl.addEventListener("click", resetGrade);
     }
 };
 
