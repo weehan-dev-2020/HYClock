@@ -28,18 +28,18 @@ const getName = () => {
 const resetName = () => {
   localStorage.removeItem("univclock-userName");
   getName();
-}
+};
 
 const setName = () => {
   let userName = getName();
-  if (userName === null || userName === '') {
-    userName = "학우"
+  if (userName === null || userName === "") {
+    userName = "학우";
   }
   const nameEl = document.getElementById("name");
-  nameEl.innerHTML = `<span><button id="namebutton" class="word" style="padding:0;">${userName}</button>님의 종강까지 남은 시간</span>`
+  nameEl.innerHTML = `<span><button id="namebutton" class="word" style="padding:0;">${userName}</button>님의 종강까지 남은 시간</span>`;
   const namebuttonEl = document.getElementById("namebutton");
   namebuttonEl.addEventListener("click", resetName);
-}
+};
 
 const setTime = () => {
   const d = new Date();
@@ -69,12 +69,31 @@ const getWordList = () => {
     });
 };
 
+const resetModal = (e) => {
+  let modalList = document.querySelectorAll("input.open-check");
+
+  for (let i = 0; i < modalList.length; i++) {
+    if (modalList[i] !== e.target) {
+      modalList[i].checked = false;
+    }
+  }
+};
+
+const setModalEvent = () => {
+  let modalList = document.querySelectorAll("input.open-check");
+  console.log(modalList);
+  for (let i = 0; i < modalList.length; i++) {
+    modalList[i].addEventListener("change", resetModal);
+  }
+};
+
 const windowOnload = () => {
   setBackground();
   setName();
   setTime();
   setInterval(setTime, 1000);
   getWordList();
+  setModalEvent();
 };
 
 window.addEventListener("load", windowOnload);

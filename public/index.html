@@ -36,7 +36,7 @@
                 <span class="current-sky-emoji"></span>
                 <div class="current-temperature"></div>
               </div>
-              <div><hr></div>
+              <div><hr /></div>
               <div class="hourly-weather">
                 <div class="hourly-weather-box">
                   <div class="hourly-weather-time"></div>
@@ -323,23 +323,30 @@
             <div class="suggestion-modal modal">
               <div class="title">건의사항</div>
               <div class="sub-title">여러분의 의견을 적극 반영하겠습니다.</div>
-              <textarea id="cs-content" placeholder="기능과, 명언 추가, 제거 그 밖에 개선사항을 적어주시면 적극 고려하여 반영하겠습니다."></textarea>
+              <textarea
+                id="cs-content"
+                placeholder="기능과, 명언 추가, 제거 그 밖에 개선사항을 적어주시면 적극 고려하여 반영하겠습니다."
+              ></textarea>
               <div class="sub-title">결과를 받아볼 이메일을 적어주세요.</div>
-              <input type="text" id="cs-email" placeholder="이메일 주소">
+              <input type="text" id="cs-email" placeholder="이메일 주소" />
               <button class="button" id="cs-button">
                 <div class="text">개발자한테 보내기</div>
-                <img class="loading" src="../src/image/loading-nobackground.svg" width="32">
+                <img
+                  class="loading"
+                  src="../src/image/loading-nobackground.svg"
+                  width="32"
+                />
               </button>
             </div>
           </div>
 
           <div class="suggestion-container tab-container">
-              <label
-                  for="open-suggestion-modal"
-                  class="suggestion-label open-label no-drag"
-                >
-                건의사항
-              </label>
+            <label
+              for="open-suggestion-modal"
+              class="suggestion-label open-label no-drag"
+            >
+              건의사항
+            </label>
           </div>
           <div class="developer-container tab-container">
             <label
