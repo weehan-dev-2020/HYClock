@@ -10,6 +10,8 @@
     <script src="js/cs.js"></script>
     <script src="js/timer.js"></script>
     <script src="js/randomMenu.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/notice.js"></script>
     <link rel="stylesheet" href="css/init.css" />
     <link rel="stylesheet" href="css/root.css" />
     <link rel="stylesheet" href="css/body.css" />
@@ -30,6 +32,41 @@
             />
             <div class="modal weather-modal">
               <div class="title">왕십리 날씨</div>
+              <div class="current-weather">
+                <span class="current-sky-emoji"></span>
+                <div class="current-temperature"></div>
+              </div>
+              <div><hr></div>
+              <div class="hourly-weather">
+                <div class="hourly-weather-box">
+                  <div class="hourly-weather-time"></div>
+                  <div class="hourly-weather-info">
+                    <span class="hourly-weather-emoji"></span>
+                    <span class="hourly-weather-temp"></span>
+                  </div>
+                </div>
+                <div class="hourly-weather-box">
+                  <div class="hourly-weather-time"></div>
+                  <div class="hourly-weather-info">
+                    <span class="hourly-weather-emoji"></span>
+                    <span class="hourly-weather-temp"></span>
+                  </div>
+                </div>
+                <div class="hourly-weather-box">
+                  <div class="hourly-weather-time"></div>
+                  <div class="hourly-weather-info">
+                    <span class="hourly-weather-emoji"></span>
+                    <span class="hourly-weather-temp"></span>
+                  </div>
+                </div>
+                <div class="hourly-weather-box">
+                  <div class="hourly-weather-time"></div>
+                  <div class="hourly-weather-info">
+                    <span class="hourly-weather-emoji"></span>
+                    <span class="hourly-weather-temp"></span>
+                  </div>
+                </div>
+              </div>
             </div>
             <input
               hidden
@@ -39,6 +76,34 @@
             />
             <div class="modal hy-notice-modal">
               <div class="title">학사공지</div>
+              <div class="sub-title">최신 학사공지 15개를 알려드립니다.</div>
+              <div class="notice-box">
+                <div class="notice info" id="notice0">
+                  <a class="notice-link"></a>
+                  <span class="notice-date"></span>
+                </div>
+                <div class="notice info" id="notice1">
+                  <a class="notice-link"></a>
+                  <span class="notice-date"></span>
+                </div>
+                <div class="notice info" id="notice2">
+                  <a class="notice-link"></a>
+                  <span class="notice-date"></span>
+                </div>
+                <div class="notice info" id="notice3">
+                  <a class="notice-link"></a>
+                  <span class="notice-date"></span>
+                </div>
+                <div class="notice info" id="notice4">
+                  <a class="notice-link"></a>
+                  <span class="notice-date"></span>
+                </div>
+              </div>
+              <div class="notice-pagination">
+                <div class="pagination-btn" id="notice-page1">1</div>
+                <div class="pagination-btn" id="notice-page2">2</div>
+                <div class="pagination-btn" id="notice-page3">3</div>
+              </div>
             </div>
           </div>
           <div class="tab-container weather-container">

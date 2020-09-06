@@ -13,7 +13,9 @@
       .navigation .left-side .tab-container.hy-notice-container .open-check:checked + .modal.hy-notice-modal {
         left: 16px;
         top: 48px;
-        bottom: unset; }
+        bottom: unset;
+        width: 320px;
+      }
   .navigation .right-side .modal-wrapper .open-check:checked + .modal.random-food-modal {
     right: 16px;
     top: 48px;
@@ -42,7 +44,71 @@
       height: 32px;
       font-size: 16px;
       font-weight: 700; }
-
+.current-sky-emoji{
+  font-size: 30px;
+}
+.current-temperature{
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.notice-box {
+  margin: 7px 0;
+}
+.notice {
+  font-size: 13px;
+  margin-bottom: 9px;
+}
+.notice-link {
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  width:100%;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pagination-btn {
+  border: 1px solid white;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  text-align: center; 
+  line-height: 20px;
+  font-size: 14px;
+}
+.active-btn {
+  color: black;
+  background-color: white;
+}
+.pagination-btn:hover{
+  cursor: pointer;
+}
+.notice-pagination {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.hourly-weather {
+  display: flex;
+  justify-content: space-between;
+}
+.hourly-weather-box { 
+  display: inline-box;
+  width:25%;
+}
+.hourly-weather-time{
+  text-align: center;
+}
+.hourly-weather-emoji{
+  margin-left: 6px;
+}
+.hourly-weather-info {
+  margin-top: 5px;
+}
 @keyframes roll {
   0% {
     top: 0px; }
