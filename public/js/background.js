@@ -7,7 +7,9 @@ const setBackground = () => {
       `background-image: linear-gradient(0, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("${background}")`
     );
   } else {
-    root.removeAttribute("style");
+    const image = 'https://user-images.githubusercontent.com/52434876/92235629-f5b30a00-eeee-11ea-9e63-011b80177eaa.jpg'
+    localStorage.setItem("univclock-background", image);
+    setBackground();
   }
 };
 
