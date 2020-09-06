@@ -9,16 +9,15 @@ const saveGrade = (gradeInput) => {
     }
 }
 
-const submitHandle = () => {
-    const gradeForm = document.querySelector(".grade");
-    const gradeInput = gradeForm.querySelector("select").value;
-    saveGrade(gradeInput);
-}
-
 const askGrade = () => {
     const gradeForm = document.querySelector(".grade");
     gradeForm.classList.remove("invisible");
-    gradeForm.addEventListener("submit", submitHandle);
+    gradeForm.addEventListener("submit", () => {
+        const gradeForm = document.querySelector(".grade");
+        const gradeInput = gradeForm.querySelector("select").value;
+        saveGrade(gradeInput);
+    }
+    );
 }
 
 const setGrade = () => {
@@ -56,7 +55,7 @@ const getEnterDay = () => {
 }
 
 const resetGrade = () => {
-    localStorage.setItem("univclock-userGrade", "NaN");
+    localStorage.removeItem("univclock-userGrade");
     setGrade();
 }
 
