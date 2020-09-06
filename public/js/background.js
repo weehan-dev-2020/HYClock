@@ -1,15 +1,16 @@
 const setBackground = () => {
   const background = localStorage.getItem("univclock-background");
+  const root = document.getElementById("root");
   if (background) {
-    const root = document.getElementById("root");
     root.setAttribute(
       "style",
       `background-image: linear-gradient(0, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("${background}")`
     );
   } else {
-    const image = 'https://user-images.githubusercontent.com/52434876/92235629-f5b30a00-eeee-11ea-9e63-011b80177eaa.jpg'
-    localStorage.setItem("univclock-background", image);
-    setBackground();
+    root.setAttribute(
+      "style",
+      `background-image: linear-gradient(0, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("../src/image/default-background-min.jpg")`
+    );
   }
 };
 

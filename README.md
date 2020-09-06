@@ -20,18 +20,6 @@
 한양대생을 위한 최고의 크롬 확장 프로그램과 지금 함께하세요!
 ```
 
-## 미리보기
-
-![](src/image/preview1.png)
-![](src/image/preview2.png)
-
-## 프로젝트 시작하기
-
-1. `git clone https://github.com/Neulhan/UnivClock.git`
-2. `chrome://extensions/` 접속
-3. `압축해제된 확장 프로그램을 로드합니다.` 클릭
-4. 클론받은 UnivClock 디렉토리 선택
-
 ---
 
 inspired by [@MaxKim-J](https://github.com/MaxKim-J) - [https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension](https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension)

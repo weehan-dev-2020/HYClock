@@ -1,9 +1,10 @@
 #root {
   width: 100vw;
   height: 100vh;
+  background-color: #666b6e;
   background-size: cover;
   background-position: center;
-  background-color: #fafafa;
+  animation: fadeIn 2s linear;
 }
 
 #root > .navigation {
