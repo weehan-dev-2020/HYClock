@@ -34,23 +34,23 @@ const setGrade = () => {
 const getEnterDay = () => {
     const grade = localStorage.getItem("univclock-userGrade");
     if (grade === '12') {
-        return new Date(2012, 01, 24);
+        return new Date(2012, 01, 27);
     } else if (grade === '13') {
-        return new Date(2013, 01, 24);
+        return new Date(2013, 01, 27);
     } else if (grade === '14') {
-        return new Date(2014, 01, 24);
+        return new Date(2014, 01, 26);
     } else if (grade === '15') {
-        return new Date(2015, 01, 24);
+        return new Date(2015, 01, 25);
     } else if (grade === '16') {
-        return new Date(2016, 01, 24);
+        return new Date(2016, 01, 26);
     } else if (grade === '17') {
-        return new Date(2017, 01, 24);
+        return new Date(2017, 01, 27);
     } else if (grade === '18') {
-        return new Date(2018, 01, 24);
+        return new Date(2018, 01, 28);
     } else if (grade === '19') {
-        return new Date(2019, 01, 24);
+        return new Date(2019, 01, 28);
     } else if (grade === '20') {
-        return new Date(2020, 01, 24);
+        return new Date(2020, 01, 25);
     }
 }
 
