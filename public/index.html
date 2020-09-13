@@ -168,11 +168,22 @@
           <p id="stopwatch" class="time word">
             지금까지 한양과 ???일을 함께했습니다
           </p>
-
           <p class="invisible">바로가기</p>
           <div class="link-list">
-            <ul>
+            <template id="link-template">
               <li>
+                <a href="">
+                  <div class="favorite-link">
+                    <img class="favorite-icon" src="" alt="" />
+                    <div class="favorite-name">
+                      <span class="link-name"></span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </template>
+            <ul class="link-wrapper">
+              <!-- <li>
                 <a href="https://portal.hanyang.ac.kr/sso/lgin.do"
                   ><div class="favorite-link">
                     <img
@@ -181,8 +192,8 @@
                       alt="포털"
                     />
                     <div class="favorite-name"><span>HY-In</span></div>
-                  </div></a
-                >
+                  </div>
+                </a>
               </li>
               <li>
                 <a href="https://learn.hanyang.ac.kr/"
@@ -193,8 +204,8 @@
                       alt="한양대"
                     />
                     <div class="favorite-name"><span>블랙보드</span></div>
-                  </div></a
-                >
+                  </div>
+                </a>
               </li>
               <li>
                 <a href="https://www.weehan.com/"
@@ -203,8 +214,8 @@
                       <img src="../src/image/icon/weehan.ico" alt="지도" />
                     </div>
                     <div class="favorite-name"><span>위한</span></div>
-                  </div></a
-                >
+                  </div>
+                </a>
               </li>
               <li>
                 <a href="https://www.hanyang.ac.kr/web/www/hub">
@@ -216,8 +227,8 @@
                       />
                     </div>
                     <div class="favorite-name"><span>한양대</span></div>
-                  </div></a
-                >
+                  </div>
+                </a>
               </li>
               <li>
                 <a href="https://lib.hanyang.ac.kr/"
@@ -229,9 +240,9 @@
                       />
                     </div>
                     <div class="favorite-name"><span>백남학술정보관</span></div>
-                  </div></a
-                >
-              </li>
+                  </div>
+                </a>
+              </li> -->
             </ul>
           </div>
 

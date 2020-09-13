@@ -25,6 +25,29 @@ const getName = () => {
   return userName;
 };
 
+const getLinks = () => {
+  let links = localStorage.getItem("links");
+  if (links === null) {
+    localStorage.setItem("links", JSON.stringify(config.links));
+    return config.links;
+  }
+  return JSON.parse(links);
+};
+
+const loadLinks = (e) => {
+  const links = getLinks();
+  const template = document.querySelector("#link-template");
+  const wrapper = document.querySelector(".link-wrapper");
+  for (let i = 0; i < links.length; i++) {
+    const link = links[i];
+    const clone = document.importNode(template.content, true);
+    clone.querySelector("a").setAttribute("href", link.url);
+    clone.querySelector(".favorite-icon").setAttribute("src", link.image);
+    clone.querySelector(".link-name").innerText = link.name;
+    wrapper.append(clone);
+  }
+};
+
 const resetName = () => {
   localStorage.removeItem("univclock-userName");
   getName();
@@ -81,7 +104,6 @@ const resetModal = (e) => {
 
 const setModalEvent = () => {
   let modalList = document.querySelectorAll("input.open-check");
-  console.log(modalList);
   for (let i = 0; i < modalList.length; i++) {
     modalList[i].addEventListener("change", resetModal);
   }
@@ -94,6 +116,7 @@ const windowOnload = () => {
   setInterval(setTime, 1000);
   getWordList();
   setModalEvent();
+  loadLinks();
 };
 
 window.addEventListener("load", windowOnload);
