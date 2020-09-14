@@ -20,6 +20,19 @@
     <title>새 탭</title>
   </head>
   <body>
+    <div class="link-modal-wrapper none">
+      <div class="link-modal">
+        <p>바로가기 추가</p>
+        <label for="이름">이름</label>
+        <input type="text" id="이름" />
+        <label for="주소">주소</label>
+        <input type="text" id="주소" />
+        <div class="buttons">
+          <button>취소</button>
+          <button>완료</button>
+        </div>
+      </div>
+    </div>
     <div id="root">
       <div class="navigation">
         <div class="left-side">
@@ -171,9 +184,12 @@
           <p class="invisible">바로가기</p>
           <div class="link-list">
             <template id="link-template">
-              <li>
-                <a href="">
+              <li class="link-element">
+                <a>
                   <div class="favorite-link">
+                    <div class="edit-button delete">
+                      <img class="delete" src="../src/image/icon/delete.png" />
+                    </div>
                     <div class="img-wrapper">
                       <img class="favorite-icon" src="" alt="" />
                     </div>

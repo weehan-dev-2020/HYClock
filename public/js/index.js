@@ -25,9 +25,20 @@ const getName = () => {
   return userName;
 };
 const setLinks = (link) => {
+  if (!link.name || !link.href) {
+    return;
+  }
   const links = getLinks();
   links.push(link);
   localStorage.setItem("links", JSON.stringify(links));
+  loadLinks();
+};
+
+const removeLink = (idx) => {
+  const links = getLinks();
+  links.splice(idx, 1);
+  localStorage.setItem("links", JSON.stringify(links));
+  loadLinks();
 };
 
 const getLinks = () => {
@@ -39,6 +50,66 @@ const getLinks = () => {
   return JSON.parse(links);
 };
 
+const submitLink = () => {
+  const inputs = [...document.querySelectorAll(".link-modal input")];
+  const values = [];
+  inputs.forEach((item) => {
+    values.push(item.value);
+    item.value = "";
+  });
+  addLinks(...values);
+};
+
+const openModal = (link) => {
+  const modal = document.querySelector(".link-modal-wrapper");
+  modal.classList.remove("none");
+  [...modal.querySelectorAll("button")].forEach((item, idx) => {
+    item.addEventListener("click", (event) => {
+      modal.classList.add("none");
+      if (idx === 1) {
+        submitLink();
+      }
+    });
+  });
+};
+
+const findNode = (node, targetSelector) => {
+  const targetList = Array.from(document.querySelectorAll(targetSelector));
+
+  while (true) {
+    for (let i = 0; i < targetList.length; i++) {
+      if (targetList[i] === node) {
+        return node;
+      }
+    }
+
+    node = node.parentNode;
+    if (node.tagName === "body") break;
+  }
+  return node;
+};
+
+const deleteLink = (target) => {
+  const link = findNode(target, ".link-element");
+  const idx = link.getAttribute("key") * 1;
+  removeLink(idx);
+};
+
+const addAddButton = (wrapper, template) => {
+  const clone = document.importNode(template.content, true);
+
+  clone.querySelector("a").removeAttribute("href");
+  clone.querySelector(".edit-button").remove();
+  clone.querySelector("a").addEventListener("click", () => {
+    openModal();
+  });
+  clone
+    .querySelector(".favorite-icon")
+    .setAttribute("src", `../../src/image/icon/add.png`);
+  clone.querySelector(".link-name").innerText = "바로가기 추가";
+  wrapper.append(clone);
+};
+
 const loadLinks = (e) => {
   const links = getLinks();
   const template = document.querySelector("#link-template");
@@ -47,7 +118,14 @@ const loadLinks = (e) => {
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
     const clone = document.importNode(template.content, true);
-    clone.querySelector("a").setAttribute("href", link.href);
+    clone.querySelector("li").setAttribute("key", i);
+    clone.querySelector("a").addEventListener("click", (event) => {
+      if (event.target.classList.contains("delete")) {
+        deleteLink(event.target);
+      } else {
+        location.href = link.href;
+      }
+    });
     clone
       .querySelector(".favorite-icon")
       .setAttribute(
@@ -57,6 +135,10 @@ const loadLinks = (e) => {
     clone.querySelector(".link-name").innerText = link.name;
     wrapper.append(clone);
   }
+  if (links.length >= 10) {
+    return;
+  }
+  addAddButton(wrapper, template);
 };
 
 const addLinks = (name, href) => {
@@ -65,7 +147,6 @@ const addLinks = (name, href) => {
     href,
   };
   setLinks(link);
-  loadLinks();
 };
 
 const resetName = () => {
