@@ -84,27 +84,22 @@ const config = {
     {
       name: "HY-in",
       href: "https://portal.hanyang.ac.kr/sso/lgin.do",
-      image: "../src/image/icon/hy-in.png",
     },
     {
       name: "블랙보드",
       href: "https://learn.hanyang.ac.kr/",
-      image: "../src/image/icon/blackboard.png",
     },
     {
       name: "위한",
       href: "https://www.weehan.com/",
-      image: "../src/image/icon/weehan.ico",
     },
     {
       name: "한양대",
       href: "https://www.hanyang.ac.kr/web/www/hub",
-      image: "../src/image/icon/HYU_symbol_basic_png.png",
     },
     {
       name: "도서관",
       href: "https://lib.hanyang.ac.kr/",
-      image: "../src/image/icon/HYU_logo_singlecolor_png.png",
     },
   ],
 };

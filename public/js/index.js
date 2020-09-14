@@ -24,6 +24,11 @@ const getName = () => {
   }
   return userName;
 };
+const setLinks = (link) => {
+  const links = getLinks();
+  links.push(link);
+  localStorage.setItem("links", JSON.stringify(links));
+};
 
 const getLinks = () => {
   let links = localStorage.getItem("links");
@@ -38,14 +43,29 @@ const loadLinks = (e) => {
   const links = getLinks();
   const template = document.querySelector("#link-template");
   const wrapper = document.querySelector(".link-wrapper");
+  wrapper.innerHTML = "";
   for (let i = 0; i < links.length; i++) {
     const link = links[i];
     const clone = document.importNode(template.content, true);
-    clone.querySelector("a").setAttribute("href", link.url);
-    clone.querySelector(".favorite-icon").setAttribute("src", link.image);
+    clone.querySelector("a").setAttribute("href", link.href);
+    clone
+      .querySelector(".favorite-icon")
+      .setAttribute(
+        "src",
+        `https://www.google.com/s2/favicons?domain=${link.href}`
+      );
     clone.querySelector(".link-name").innerText = link.name;
     wrapper.append(clone);
   }
+};
+
+const addLinks = (name, href) => {
+  const link = {
+    name,
+    href,
+  };
+  setLinks(link);
+  loadLinks();
 };
 
 const resetName = () => {
