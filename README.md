@@ -20,6 +20,14 @@
 한양대생을 위한 최고의 크롬 확장 프로그램과 지금 함께하세요!
 ```
 
+## 업데이트 예정 목록
+
+- 학식 조회 기능
+- 배경화면 이미지 파일 드래그&드랍
+- 링크 순서 조정 기능
+- 날씨 지역 설정 기능(현재는 왕십리 고정)
+- 종강 시간 사용자 커스텀 기능
+
 ---
 
 inspired by [@MaxKim-J](https://github.com/MaxKim-J) - [https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension](https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension)
