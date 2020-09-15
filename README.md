@@ -28,6 +28,8 @@
 - 날씨 지역 설정 기능(현재는 왕십리 고정)
 - 종강 시간 사용자 커스텀 기능
 
+그 밖에 업데이트가 필요한 기능&개선될 기능은 언제든 문의 해주세요!
+
 ---
 
 inspired by [@MaxKim-J](https://github.com/MaxKim-J) - [https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension](https://github.com/MaxKim-J/HUFS-Semester-Clock-Extension)
