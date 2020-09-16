@@ -168,7 +168,9 @@ const setName = () => {
 const setTime = () => {
   const d = new Date();
   const timeEl = document.getElementById("main-time");
-  timeEl.innerText = `${d.getFullYear()}년 ${d.getMonth()}월 ${d.getDate()}일 ${d.getHours()}시 ${d.getMinutes()}분,`;
+  timeEl.innerText = `${d.getFullYear()}년 ${
+    d.getMonth() + 1
+  }월 ${d.getDate()}일 ${d.getHours()}시 ${d.getMinutes()}분,`;
 };
 
 const getWordList = () => {
