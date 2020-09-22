@@ -51,13 +51,19 @@ const getLinks = () => {
 };
 
 const submitLink = () => {
-  const inputs = [...document.querySelectorAll(".link-modal input")];
-  const values = [];
-  inputs.forEach((item) => {
-    values.push(item.value);
-    item.value = "";
-  });
-  addLinks(...values);
+  addLinks(
+    ...[...document.querySelectorAll(".link-modal input")].map((item, idx) => {
+      if (idx === 0) {
+        return item.value;
+      }
+      const value = item.value;
+      item.value = "";
+      if (value.startsWith("http://") || value.startsWith("https://")) {
+        return value;
+      }
+      return `https://${value}`;
+    })
+  );
 };
 
 const openModal = (link) => {
