@@ -1,51 +1,67 @@
 .modal-wrapper {
-  position: absolute; }
-  .modal-wrapper.left {
-    left: 16px; }
-  .modal-wrapper.top {
-    top: 48px; }
-  .modal-wrapper.right {
-    right: 16px; }
-  .modal-wrapper.bottom {
-    bottom: 48px; }
-  .modal-wrapper .modal {
-    display: none;
-    margin-bottom: 16px; }
-  .modal-wrapper .open-check:checked + .modal {
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    color: white;
-    width: 300px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.6); }
-    .modal-wrapper .open-check:checked + .modal .title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 10px; }
-    .modal-wrapper .open-check:checked + .modal .sub-title {
-      font-size: 14px;
-      margin: 12px 0 8px; }
-    .modal-wrapper .open-check:checked + .modal .info {
-      margin-top: 2px;
-      color: #888; }
-    .modal-wrapper .open-check:checked + .modal .button {
-      background-color: #e6e6e6;
-      width: 120px;
-      color: #292931;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer; }
-      .modal-wrapper .open-check:checked + .modal .button:hover {
-        background-color: #bbb; }
+  position: absolute;
+}
+.modal-wrapper.left {
+  left: 16px;
+}
+.modal-wrapper.top {
+  top: 48px;
+}
+.modal-wrapper.right {
+  right: 16px;
+}
+.modal-wrapper.bottom {
+  bottom: 48px;
+}
+.modal-wrapper .modal {
+  display: none;
+  margin-bottom: 16px;
+}
+.modal-wrapper .open-check:checked + .modal {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  color: white;
+  width: 300px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-wrapper .open-check:checked + .modal .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.modal-wrapper .open-check:checked + .modal .sub-title {
+  font-size: 14px;
+  margin: 12px 0 8px;
+}
+.modal-wrapper .open-check:checked + .modal .sub-title.green {
+  color: lightgreen;
+}
+.modal-wrapper .open-check:checked + .modal .info {
+  margin-top: 2px;
+  color: #888;
+}
+.modal-wrapper .open-check:checked + .modal .button {
+  background-color: #e6e6e6;
+  width: 120px;
+  color: #292931;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.modal-wrapper .open-check:checked + .modal .button:hover {
+  background-color: #bbb;
+}
 
 .tab-container .open-label {
   display: block;
   color: white;
   font-size: 16px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .footer {
   width: 100%;
@@ -55,49 +71,111 @@
   display: flex;
   padding: 1rem;
   justify-content: space-between;
-  align-items: center; }
-  .footer .right-side {
-    display: flex;
-    justify-content: flex-end; }
-    .footer .right-side label:first-child {
-      margin-left: 16px; }
-    .footer .right-side .open-check:checked + .suggestion-modal textarea,
-    .footer .right-side .open-check:checked + .suggestion-modal input {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 8px; }
-    .footer .right-side .open-check:checked + .suggestion-modal textarea {
-      height: 120px; }
-    .footer .right-side .open-check:checked + .suggestion-modal .button {
-      width: 100%;
-      height: 40px;
-      margin-top: 20px; }
-      .footer .right-side .open-check:checked + .suggestion-modal .button .loading {
-        display: none; }
-      .footer .right-side .open-check:checked + .suggestion-modal .button:disabled .text {
-        display: none; }
-      .footer .right-side .open-check:checked + .suggestion-modal .button:disabled .loading {
-        display: block; }
-    .footer .right-side .open-check:checked + .developer-modal {
-      right: 0; }
-      .footer .right-side .open-check:checked + .developer-modal .developer-info-wrapper .links {
-        margin-top: 20px;
-        display: flex; }
-        .footer .right-side .open-check:checked + .developer-modal .developer-info-wrapper .links a {
-          display: block;
-          width: 32px;
-          height: 32px;
-          margin-right: 8px; }
-          .footer .right-side .open-check:checked + .developer-modal .developer-info-wrapper .links a img {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-            background-color: white; }
-      .footer .right-side .open-check:checked + .developer-modal .developer-info-wrapper .names a {
-        font-weight: 700;
-        font-size: 20px;
-        color: white; }
-        .footer .right-side .open-check:checked + .developer-modal .developer-info-wrapper .names a:hover {
-          color: skyblue; }
+  align-items: center;
+}
+.footer .left-side {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer .right-side {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer .left-side label:first-child {
+  margin-right: 16px;
+}
+.footer .right-side label:first-child {
+  margin-left: 16px;
+}
+.footer .right-side .open-check:checked + .suggestion-modal textarea,
+.footer .right-side .open-check:checked + .suggestion-modal input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+}
+.footer .right-side .open-check:checked + .suggestion-modal textarea {
+  height: 120px;
+}
+.footer .right-side .open-check:checked + .suggestion-modal .button {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+.footer .right-side .open-check:checked + .suggestion-modal .button .loading {
+  display: none;
+}
+.footer
+  .right-side
+  .open-check:checked
+  + .suggestion-modal
+  .button:disabled
+  .text {
+  display: none;
+}
+.footer
+  .right-side
+  .open-check:checked
+  + .suggestion-modal
+  .button:disabled
+  .loading {
+  display: block;
+}
+.footer .right-side .open-check:checked + .developer-modal {
+  right: 0;
+}
+.footer
+  .right-side
+  .open-check:checked
+  + .developer-modal
+  .developer-info-wrapper
+  .links {
+  margin-top: 20px;
+  display: flex;
+}
+.footer
+  .right-side
+  .open-check:checked
+  + .developer-modal
+  .developer-info-wrapper
+  .links
+  a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+.footer
+  .right-side
+  .open-check:checked
+  + .developer-modal
+  .developer-info-wrapper
+  .links
+  a
+  img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: white;
+}
+.footer
+  .right-side
+  .open-check:checked
+  + .developer-modal
+  .developer-info-wrapper
+  .names
+  a {
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+.footer
+  .right-side
+  .open-check:checked
+  + .developer-modal
+  .developer-info-wrapper
+  .names
+  a:hover {
+  color: skyblue;
+}
 
 /*# sourceMappingURL=footer.css.map */

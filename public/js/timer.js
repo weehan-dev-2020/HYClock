@@ -65,12 +65,11 @@ const setStopwatch = (startDay) => {
     const now = new Date();
     const time = now - startDay;
     const date = Math.floor(time / (1000 * 60 * 60 * 24));
-    timerEl.innerHTML = `<span>지금까지 한양과 <button id="gradebutton" class="word" style="padding: 0; margin:0px;">${date}</button>일을 함께했습니다</span>`;
+    timerEl.innerHTML = `<span>지금까지 한양과 <button id="gradebutton" class="word can-change" style="padding: 0; margin:0px;">${date}</button>일을 함께했습니다</span>`;
     const gradebuttonEl = document.getElementById("gradebutton");
     gradebuttonEl.addEventListener("click", resetGrade);
   }
 };
-
 const setTimer = (dDay) => {
   const now = new Date();
   const time = new Date(dDay - now);
@@ -80,13 +79,68 @@ const setTimer = (dDay) => {
   timerEl.innerText = `${date}일 ${hour}시간 ${time.getMinutes()}분 ${time.getSeconds()}초`;
 };
 
+const getDday = () => {
+  let date = localStorage.getItem("dday");
+  if (date) {
+    return new Date(date);
+  }
+  return new Date(2020, 11, 21);
+};
+
+const saveDday = () => {
+  const [date, time] = getTimeInput();
+  const timeString = `${date.value}T${time.value}:00`;
+  const t = new Date(timeString);
+  localStorage.setItem("dday", t);
+  setTimer(t);
+  clearInterval(loop);
+  loop = setInterval(setTimer, 1000, t);
+
+  const input = document.getElementById("d-day-name-input");
+  localStorage.setItem("dDayName", input.value);
+  setDdayName();
+};
+
+const setDdayInput = (t) => {
+  let [date, time] = getTimeInput();
+  date.value = `${t.getFullYear()}-${("0" + String(t.getMonth() + 1)).slice(
+    -2
+  )}-${t.getDate()}`;
+  const timeString = `${("0" + String(t.getHours())).slice(-2)}:${(
+    "0" + String(t.getMinutes())
+  ).slice(-2)}`;
+  time.value = timeString;
+  const saveButton = document.getElementById("save-dday-button");
+  saveButton.addEventListener("click", saveDday);
+};
+
+const getDdayName = () => {
+  const dDayName = localStorage.getItem("dDayName");
+  if (dDayName) {
+    return dDayName;
+  }
+  return "종강";
+};
+
+const setDdayName = () => {
+  const dDayName = getDdayName();
+  const input = document.getElementById("d-day-name-input");
+  const dDayNameDisplay = document.getElementById("d-day-name");
+  input.value = dDayName;
+  dDayNameDisplay.innerText = dDayName;
+};
+
+let loop;
+
 const loadTimer = () => {
-  const dDay = new Date(2020, 11, 21);
+  const dDay = getDday();
   const enterDay = getEnterDay();
   setTimer(dDay);
   setGrade();
   setStopwatch(enterDay);
-  setInterval(setTimer, 1000, dDay);
+  loop = setInterval(setTimer, 1000, dDay);
+  setDdayInput(dDay);
+  setDdayName();
 };
 
 window.addEventListener("load", loadTimer);

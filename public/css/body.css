@@ -165,7 +165,18 @@
   font-size: 14px;
   font-weight: 100;
 }
-
+span#name {
+  cursor: pointer;
+}
+.can-change {
+  transition: all ease 0.3s;
+  display: inline-block;
+}
+.can-change:hover {
+  background-color: white;
+  color: #292931;
+  transform: scale(1.1);
+}
 .developer-modal .button {
   width: 100%;
 }

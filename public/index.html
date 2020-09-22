@@ -160,7 +160,10 @@
             <input type="text" placeholder="이름을 입력하세요" />
             <input type="submit" value="set" />
           </form>
-          <p id="name" class="word">학우님의 종강까지 남은 시간</p>
+          <p class="word">
+            <span class="can-change" id="name"></span> 님의
+            <span id="d-day-name"></span>까지 남은 시간
+          </p>
           <p id="timer" class="time"><br /></p>
           <div>
             <form class="grade invisible">
@@ -231,6 +234,28 @@
               <div class="reset-background button">배경화면 초기화</div>
               <div class="info">기본 배경화면으로 초기화합니다.</div>
             </div>
+            <input
+              hidden
+              type="checkbox"
+              class="open-check"
+              id="open-information-change-modal"
+            />
+            <div class="information-change-modal modal">
+              <div class="title">정보 수정</div>
+              <div class="sub-title">D-day 이름 변경</div>
+              <input type="text" id="d-day-name-input" />
+              <div class="sub-title">D-day 변경하기</div>
+              <input type="date" id="finish-date-input" />
+              <div class="sub-title">D-day 변경하기</div>
+              <input type="time" id="finish-time-input" />
+              <button
+                id="save-dday-button"
+                style="margin-top: 16px"
+                class="button"
+              >
+                저장하기
+              </button>
+            </div>
           </div>
           <div class="background-container tab-container">
             <label
@@ -238,6 +263,14 @@
               class="background-change-label open-label no-drag"
             >
               배경화면 수정
+            </label>
+          </div>
+          <div class="information-container tab-container">
+            <label
+              for="open-information-change-modal"
+              class="information-change-label open-label no-drag"
+            >
+              정보 수정
             </label>
           </div>
         </div>
@@ -251,15 +284,25 @@
               id="open-developer-modal"
             />
             <div class="developer-modal modal">
-              <div class="title">업데이트정보</div>
+              <div class="title">1.4 릴리즈</div>
               <p class="sub-title">
-                한양대학교 종강시계에 대한 업데이트, 릴리즈 정보입니다. 현재
-                기능과 앞으로 추가 예정인 기능을 확인해보세요
+                - 전역시계로도 사용가능하게 d-day 목표 이름을 변경할 수
+                있습니다.
               </p>
               <p class="sub-title">
-                준비중인 기능은 "학식 메뉴", "날씨 동네 설정", "종강 시간
-                커스텀" 등이 있습니다.
+                - 본인에게 맞는 종강 시간을 직접 설정할 수 있습니다.
               </p>
+              <p class="sub-title">
+                - 이름과 학번 재설정 버튼이 특별해졌습니다.
+              </p>
+              <p class="sub-title green">
+                - (버그수정) 12학번까지 한양과 함께한 일 수를 알 수 있습니다.
+              </p>
+              <p class="sub-title green">
+                - (버그수정) 이제 https:// 와 http:// 를 붙이지 않아도 링크에
+                추가 가능합니다.
+              </p>
+
               <br />
               <a
                 class="button"
