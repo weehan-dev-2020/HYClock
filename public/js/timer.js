@@ -49,6 +49,8 @@ const getEnterDay = () => {
     return new Date(2019, 01, 28);
   } else if (grade === "20") {
     return new Date(2020, 01, 25);
+  } else if (grade === "21") {
+    return new Date(2021, 01, 24);
   }
 };
 
@@ -84,7 +86,7 @@ const getDday = () => {
   if (date) {
     return new Date(date);
   }
-  return new Date(2020, 11, 21);
+  return new Date(2020, 02, 02);
 };
 
 const saveDday = () => {
@@ -119,7 +121,7 @@ const getDdayName = () => {
   if (dDayName) {
     return dDayName;
   }
-  return "종강";
+  return "개강";
 };
 
 const setDdayName = () => {
